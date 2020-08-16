@@ -19,10 +19,10 @@ export default function Header(props) {
     return (
         <AppBar position="static">
             <Toolbar>
-                <FitnessCenterIcon className={classes.iconStyles}/>
-                <Typography className={classes.typographyStyles} variant="h5" color="secondary">
-                    Workout of the Day
+                <Typography className={classes.typographyStyles} variant="h4" color="secondary">
+                    WOTD
                 </Typography>
+                <FitnessCenterIcon className={classes.iconStyles}/>
             </Toolbar>
         </AppBar>
     )

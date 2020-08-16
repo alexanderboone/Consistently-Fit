@@ -1,25 +1,22 @@
 import React from 'react'
-import { Typography, makeStyles } from '@material-ui/core'
+import { Grid, makeStyles } from '@material-ui/core'
 
 import ExerciseCard from './ExerciseCard'
 
 const useStyles = makeStyles({
-    typographyStyles: {
-        textAlign: 'center',
-    }
+
 })
 
 export default function Content(props) {
     const classes = useStyles()
     
     return (
-        <div>
-        <Typography className={classes.typographyStyles}>This is our content component.</Typography>
-        <ExerciseCard numSets="5" numReps="5" exerciseName="Squat" />
-        <ExerciseCard numSets="5" numReps="5" exerciseName="Squat" />
-        <ExerciseCard numSets="5" numReps="5" exerciseName="Squat" />
-        <ExerciseCard numSets="5" numReps="5" exerciseName="Squat" />
-        <ExerciseCard numSets="5" numReps="5" exerciseName="Squat" />
-        </div>
+        <Grid container spacing={2} xs={11} md={8} justify="center">
+            <ExerciseCard numSets="5" numReps="5" exerciseName="Back Squat" />
+            <ExerciseCard numSets="5" numReps="5" exerciseName="Back Squat" />
+            <ExerciseCard numSets="5" numReps="5" exerciseName="Back Squat" />
+            <ExerciseCard numSets="5" numReps="5" exerciseName="Back Squat" />
+            <ExerciseCard numSets="5" numReps="5" exerciseName="Back Squat" />
+        </Grid>
     )
 }
