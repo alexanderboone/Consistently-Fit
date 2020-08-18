@@ -15,14 +15,15 @@ const useStyles = makeStyles({
   },
   flexContent: {
     display: 'flex',
-
+    justifyContent: 'space-between'
   },
   actions: {
       display: 'flex',
       justifyContent: 'center',
       flexWrap: 'wrap',
   },
-  title: {
+  volume: {
+      textAlign: 'right'
   },
   pos: {
     marginBottom: 12,
@@ -35,6 +36,9 @@ const useStyles = makeStyles({
   },
   countText: {
       alignContent: 'center',
+  },
+  images: {
+      width: '4em'
   }
 });
 
@@ -58,7 +62,7 @@ export default function ExerciseCard(props) {
                                 </Typography>
                             </CardContent>
                             <CardContent>
-                                <Typography className={classes.title} variant="h4" component="h2" color="primary">
+                                <Typography className={classes.volume} variant="h4" component="h2" color="primary">
                                     {props.numSets} X {props.numReps}
                                 </Typography>
                             </CardContent>
@@ -71,7 +75,7 @@ export default function ExerciseCard(props) {
                         <CardContent className={classes.flexContent}>
                             <CardContent>
                                 <Typography className={classes.countText} noWrap="true" variant="h4" component="h2" color="primary">
-                                    IMG
+                                    <img className={classes.images} src={props.img}></img>
                                 </Typography>
                             </CardContent>
                             <CardContent>
