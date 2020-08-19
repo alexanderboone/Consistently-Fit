@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 
 import ReactCardFlip from 'react-card-flip';
 
+import SvgInfoIcon from '@material-ui/icons/Info';
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,7 +21,7 @@ const useStyles = makeStyles({
   },
   actions: {
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       flexWrap: 'wrap',
   },
   volume: {
@@ -62,13 +64,13 @@ export default function ExerciseCard(props) {
                                 </Typography>
                             </CardContent>
                             <CardContent>
-                                <Typography className={classes.volume} variant="h4" component="h2" color="primary">
+                                <Typography className={classes.volume} variant="h5" component="h5" color="primary">
                                     {props.numSets} X {props.numReps}
                                 </Typography>
                             </CardContent>
                         </CardContent>
                         <CardActions className={classes.actions}>
-                            <Button onClick={handleClick} color="primary" size="medium">Exercise Definition</Button>
+                            <Button onClick={handleClick} color="primary" size="medium"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
                         </CardActions>
                     </Card>
                     <Card className={classes.root} raised="true">
@@ -79,13 +81,13 @@ export default function ExerciseCard(props) {
                                 </Typography>
                             </CardContent>
                             <CardContent>
-                                <Typography className={classes.title} variant="p" component="p" color="primary">
+                                <Typography className={classes.title} variant="h6" component="h6" color="primary">
                                     {props.exerciseDescription}
                                 </Typography>
                             </CardContent>
                         </CardContent>
                         <CardActions className={classes.actions}>
-                            <Button onClick={handleClick} color="primary" size="medium">Exercise Name</Button>
+                            <Button onClick={handleClick} color="primary" size="medium"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
                         </CardActions>
                     </Card>
                 </ReactCardFlip>

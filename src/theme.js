@@ -15,6 +15,11 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
   },
+  props: {
+    MuiSvgIcon: {
+      htmlColor: '#e8f1f2',
+    }
+  },
 });
 
 export default theme
