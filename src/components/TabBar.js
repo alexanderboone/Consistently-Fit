@@ -79,27 +79,27 @@ export default function TabBar() {
                 scrollButtons="auto"
                 aria-label="workout split"
                 >
-                <Tab label="Chest" {...a11yProps(0)} />
+                <Tab label="Chest & Abs" {...a11yProps(0)} />
                 <Tab label="Back" {...a11yProps(1)} />
                 <Tab label="Shoulders" {...a11yProps(2)} />
-                <Tab label="Arms & Abs" {...a11yProps(3)} />
+                <Tab label="Arms" {...a11yProps(3)} />
                 <Tab label="Legs" {...a11yProps(4)} />
                 </Tabs>
             </AppBar>
             <TabPanel className={classes.tabPanelStyle} value={value} index={0}>
-                Chest Workout
+                <Content muscleGroup="Chest & Abs" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={1}>
-                Back Workout
+                <Content muscleGroup="Back" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={2}>
-                Shoulder Workout
+                <Content muscleGroup="Shoulders" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={3}>
-                Arms & Abs Workout
+                <Content muscleGroup="Arms" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={4}>
-                <Content />
+                <Content muscleGroup="Legs" />
             </TabPanel>
         </div>
     )

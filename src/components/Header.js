@@ -20,9 +20,9 @@ export default function Header(props) {
         <AppBar position="static">
             <Toolbar>
                 <Typography className={classes.typographyStyles} variant="h4" color="secondary">
-                    WOTD
+                WOTD
                 </Typography>
-                <SvgFitnessCenterIcon className={classes.iconStyles}/>
+                <a href="/"><SvgFitnessCenterIcon className={classes.iconStyles}/></a>
             </Toolbar>
         </AppBar>
     )
