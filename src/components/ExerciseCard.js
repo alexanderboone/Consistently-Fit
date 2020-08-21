@@ -77,7 +77,7 @@ export default function ExerciseCard(props) {
                         <CardContent className={classes.flexContent}>
                             <CardContent>
                                 <Typography className={classes.countText} noWrap="true" variant="h4" component="h2" color="primary">
-                                    <img className={classes.images} src={props.img}></img>
+                                    <img alt="Muscles targeted by the exercise" className={classes.images} src={props.img}></img>
                                 </Typography>
                             </CardContent>
                             <CardContent>
