@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import Content from './Content'
+import Workouts from './Workouts'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -87,19 +87,19 @@ export default function TabBar() {
                 </Tabs>
             </AppBar>
             <TabPanel className={classes.tabPanelStyle} value={value} index={0}>
-                <Content muscleGroup="Chest & Abs" />
+                <Workouts muscleGroup="Chest & Abs" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={1}>
-                <Content muscleGroup="Back" />
+                <Workouts muscleGroup="Back" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={2}>
-                <Content muscleGroup="Shoulders" />
+                <Workouts muscleGroup="Shoulders" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={3}>
-                <Content muscleGroup="Arms" />
+                <Workouts muscleGroup="Arms" />
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={4}>
-                <Content muscleGroup="Legs" />
+                <Workouts muscleGroup="Legs" />
             </TabPanel>
         </div>
     )
