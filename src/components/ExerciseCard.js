@@ -60,7 +60,7 @@ export default function ExerciseCard(props) {
                         <CardContent className={classes.flexContent}>
                             <CardContent>
                                 <Typography className={classes.countText} variant="h4" component="h2" color="primary">
-                                    <strong>{props.exerciseName}</strong>
+                                    <strong>{props.ss !== "0" ? "SS" + props.ss + ": " : ""}{props.exerciseName}</strong>
                                 </Typography>
                             </CardContent>
                             <CardContent>

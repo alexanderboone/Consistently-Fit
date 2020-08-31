@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ExerciseCard from './ExerciseCard'
 
@@ -39,75 +40,72 @@ export default function Workouts(props) {
     }, [setLoading, setState])
 
 
-    function createExerciseCard(exerciseName, numSets, numReps, exerciseData=State) {
+    function createExerciseCard(exerciseName, numSets, numReps, ss="0", exerciseData=State) {
         return (
-            <ExerciseCard exerciseName={exerciseName} numSets={numSets} numReps={numReps} exerciseData={exerciseData} />
+            <ExerciseCard exerciseName={exerciseName} numSets={numSets} numReps={numReps} ss={ss} exerciseData={exerciseData} />
         )
     }
 
 
     if (loading) {
-        return (<Typography>Loading...</Typography>)
+        return (<CircularProgress />)
     }
    else {
         switch (props.muscleGroup) {
             case 'Chest & Abs':
                 return (
                     <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
-                        <div className={classes.infoStyles}>
-                            <Typography className={classes.typographyStyles} variant="h3">{props.muscleGroup}</Typography>
-                        </div>
                         {createExerciseCard("BB Bench Press", "5", "6 - 8")}
                         {createExerciseCard("Incline DB Press", "4", "8 - 12")}
                         {createExerciseCard("Cable Chest Fly", "4", "15")}
                         {createExerciseCard("Hammer Grip Incline DB Press", "3", "10 - 12")}
                         {createExerciseCard("Leverage Decline Press", "4", "Burnout")}
-                        {createExerciseCard("Cable Crunches", "4", "15 - 20")}
-                        {createExerciseCard("Twisting Hanging Leg Raises", "4", "15 - 20")}
+                        {createExerciseCard("Cable Crunches", "4", "15 - 20", "1")}
+                        {createExerciseCard("Twisting Hanging Leg Raises", "4", "15 - 20", "2")}
                     </Grid>
                 )
             case 'Back':
                 return (
                     <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
-                        <ExerciseCard numSets="5" numReps="15, 12, 10, 8, 8" exerciseName="Deadlifts" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="6 - 10" exerciseName="Pull-ups" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="10 - 12" exerciseName="Unilateral DB Rows" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="10 - 12" exerciseName="Behind-the-neck Lat Pulldowns" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="MAX" exerciseName="Back Hyperextensions" exerciseDescription= "" />
+                        {createExerciseCard("BB Deadlift", "5", "15, 12, 10, 8, 8")}
+                        {createExerciseCard("Pull-up", "4", "6 - 10")}
+                        {createExerciseCard("Unilateral DB Row", "3", "10 - 12")}
+                        {createExerciseCard("Behind-the-neck Lat Pulldown", "4", "10 - 12")}
+                        {createExerciseCard("Back Hyperextension", "3", "MAX")}
                     </Grid>
                 )
             case 'Shoulders':
                 return (
                     <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
-                        <ExerciseCard numSets="5" numReps="6" exerciseName="Barbell Overhead Press" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="8 - 12" exerciseName="SS1: Barbell Upright Row" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="8 - 12" exerciseName="SS2: Behind-the-neck Seated Smith Press" exerciseDescription= "" />
-                        <ExerciseCard numSets="5" numReps="10 - 12" exerciseName="Dumbbell Lateral Raises" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="12 - 15" exerciseName="Cable Face Pull" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="12 - 15" exerciseName="DB Shrugs" exerciseDescription= "" />
+                        {createExerciseCard("BB Overhead Press", "5", "6")}
+                        {createExerciseCard("BB Upright Row", "3", "8 - 12", "1")}
+                        {createExerciseCard("Behind-the-neck Seated Smith Press", "3", "8 - 12", "2")}
+                        {createExerciseCard("DB Lateral Raises", "5", "10 - 12")}
+                        {createExerciseCard("Cable Face Pull", "3", "12 - 15", "1")}
+                        {createExerciseCard("DB Shrugs", "3", "12 - 15", "2")}
                     </Grid>
                 )
             case 'Arms':
                 return (
                     <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
-                        <ExerciseCard numSets="5" numReps="8 - 10" exerciseName="SS1: BB Curls" exerciseDescription= "" />
-                        <ExerciseCard numSets="5" numReps="8 - 10" exerciseName="SS2: Narrow-grip BB Bench Press" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="12 - 15" exerciseName="SS1: Preacher Curl" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="12 - 15" exerciseName="SS2: Narrow-Grip Dips" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="12 - 15" exerciseName="SS1: Incline DB Curls" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="12 - 15" exerciseName="SS2: Cable Pushdowns" exerciseDescription= "" />
-                        <ExerciseCard numSets="1" numReps="RTR" exerciseName="RTR Hammer Curls" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="15 - 20" exerciseName="BB Wrist Curls" exerciseDescription= "" />
+                        {createExerciseCard("BB Curl", "5", "8 - 10", "1")}
+                        {createExerciseCard("Narrow-grip BB Bench Press", "5", "8 - 10", "2")}
+                        {createExerciseCard("BB Preacher Curl", "4", "12 - 15", "1")}
+                        {createExerciseCard("Dips", "4", "12 - 15", "2")}
+                        {createExerciseCard("Incline DB Curl", "3", "12 - 15", "1")}
+                        {createExerciseCard("Cable Pressdown", "3", "12 - 15", "2")}
+                        {createExerciseCard("RTR Hammer Curl", "1", "RTR")}
+                        {createExerciseCard("BB Wrist Curl", "4", "15 - 20")}
                     </Grid>
                 )
             case 'Legs':
                 return (
                     <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
-                        <ExerciseCard numSets="6" numReps="15, 12, 10, 8, 8, 6" exerciseName="Back Squat" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="12 - 15" exerciseName="Leg Press" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="8 - 12" exerciseName="Dumbbell RDLs" exerciseDescription= "" />
-                        <ExerciseCard numSets="4" numReps="20" exerciseName="Lunges" exerciseDescription= "" />
-                        <ExerciseCard numSets="3" numReps="15 - 20" exerciseName="Lying Leg Curls" exerciseDescription= "" />
+                        {createExerciseCard("Back Squat", "6", "15, 12, 10, 8, 8, 6")}
+                        {createExerciseCard("Leg Press", "4", "12 - 15")}
+                        {createExerciseCard("DB RDL", "3", "8 - 12")}
+                        {createExerciseCard("Lunge", "4", "20")}
+                        {createExerciseCard("Lying Leg Curl", "3", "15 - 20")}
                     </Grid>
                 )
             default:

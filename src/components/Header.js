@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         padding: "0 0 0 1em",
     },
     navButtonStyles: {
-        
+        padding: "0.5em"
     }
 })
 
@@ -34,19 +34,14 @@ export default function Header(props) {
                 <Button>
                     <a href="/">
                         <Typography className={classes.typographyStyles} variant="h4" color="secondary">
-                        AB
+                        <strong><em>CF</em></strong>
                         </Typography>
                     </a>
                 </Button>
                 <div className={classes.navBarStyles}>
                     <Button className={classes.navButtonStyles} color="secondary" size="small">
                         <Typography className={classes.typographyStyles} color="secondary" variant="body1">
-                        <strong>Workouts</strong>
-                        </Typography>
-                    </Button>
-                    <Button className={classes.navButtonStyles} color="secondary" size="small">
-                        <Typography className={classes.typographyStyles} color="secondary" variant="body1">
-                        About
+                        <a href="/"><strong>Workouts</strong></a>
                         </Typography>
                     </Button>
                 </div>
