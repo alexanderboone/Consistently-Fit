@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-export default function TabBar() {
+export default function TabBar(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -87,19 +87,19 @@ export default function TabBar() {
                 </Tabs>
             </AppBar>
             <TabPanel className={classes.tabPanelStyle} value={value} index={0}>
-                <Workouts muscleGroup="Chest & Abs" />
+                <Workouts muscleGroup="Chest & Abs" State={props.State}/>
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={1}>
-                <Workouts muscleGroup="Back" />
+                <Workouts muscleGroup="Back" State={props.State}/>
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={2}>
-                <Workouts muscleGroup="Shoulders" />
+                <Workouts muscleGroup="Shoulders" State={props.State}/>
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={3}>
-                <Workouts muscleGroup="Arms" />
+                <Workouts muscleGroup="Arms" State={props.State}/>
             </TabPanel>
             <TabPanel className={classes.tabPanelStyle} value={value} index={4}>
-                <Workouts muscleGroup="Legs" />
+                <Workouts muscleGroup="Legs" State={props.State}/>
             </TabPanel>
         </div>
     )

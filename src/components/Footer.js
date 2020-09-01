@@ -10,7 +10,7 @@ const useStyles = makeStyles({
         backgroundColor: '#171738',
         color: '#e8f1f2',
         textAlign: 'center',
-        height: '5em',
+        minHeight: '5em',
         padding: '1em',
     },
     socialMedia: {
