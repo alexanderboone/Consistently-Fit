@@ -14,18 +14,22 @@ import SvgInfoIcon from '@material-ui/icons/Info';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-  },
-  flexContent: {
     display: 'flex',
     justifyContent: 'space-between'
   },
+  flexContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
   actions: {
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'flex-end',
       flexWrap: 'wrap',
   },
   volume: {
-      textAlign: 'right'
+      textAlign: 'left'
   },
   pos: {
     marginBottom: 12,
@@ -58,16 +62,29 @@ export default function ExerciseCard(props) {
                 <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
                     <Card className={classes.root} raised="true">
                         <CardContent className={classes.flexContent}>
-                            <CardContent>
-                                <Typography className={classes.countText} variant="h4" component="h2" color="primary">
-                                    <strong>{props.ss !== "0" ? "SS" + props.ss + ": " : ""}{props.exerciseName}</strong>
-                                </Typography>
-                            </CardContent>
-                            <CardContent>
-                                <Typography className={classes.volume} variant="h5" component="h5" color="primary">
-                                    {props.numSets} X {props.numReps}
-                                </Typography>
-                            </CardContent>
+                                <Grid container spacing={5}>
+                                    <Grid item>
+                                        <Typography className={classes.countText} variant="h4" component="h2" color="primary">
+                                            <strong>{props.ss !== "0" ? "SS" + props.ss + ": " : ""}{props.exerciseName}</strong>
+                                        </Typography>
+                                    </Grid>
+                                    <Grid container item spacing={10}>
+                                        <Grid item>
+                                            <Typography className={classes.volume} variant="h5" component="h5" color="primary">  
+                                                {props.numSets}
+                                                <br/>
+                                                <strong>Sets</strong>
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography className={classes.volume} variant="h5" component="h5" color="primary">
+                                                {props.numReps}
+                                                <br/>
+                                                <strong>Reps</strong>
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
                         </CardContent>
                         <CardActions className={classes.actions}>
                             <Button onClick={handleClick} color="primary" size="medium"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
@@ -75,11 +92,6 @@ export default function ExerciseCard(props) {
                     </Card>
                     <Card className={classes.root} raised="true">
                         <CardContent className={classes.flexContent}>
-                            <CardContent>
-                                <Typography className={classes.countText} noWrap="true" variant="h4" component="h2" color="primary">
-                                   
-                                </Typography>
-                            </CardContent>
                             <CardContent>
                                 <Typography className={classes.title} variant="h6" component="h6" color="primary">
                                     Execution:
