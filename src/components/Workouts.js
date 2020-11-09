@@ -14,7 +14,7 @@ export default function Workouts(props) {
     switch (props.muscleGroup) {
         case 'Chest & Abs':
             return (
-                <Grid container spacing={2} xs={11} md={8} lg={6} justify="center">
+                <Grid container spacing={2} xs={12} md={8} lg={6} justify="center">
                     {createExerciseCard("BB Bench Press", "5", "6-8")}
                     {createExerciseCard("Incline DB Press", "4", "8-12")}
                     {createExerciseCard("Cable Chest Fly", "4", "15")}
