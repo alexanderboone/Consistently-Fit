@@ -38,10 +38,9 @@ function App() {
     const getExerciseData = async () => {
         const response = await axios.get(exercisesUrl);
         setState(mapData(response.data));
-        return response.data;
+        setLoading(false);
     };
     getExerciseData()
-    setLoading(false)
   }, [setLoading, setState])
 
   if (loading) {
