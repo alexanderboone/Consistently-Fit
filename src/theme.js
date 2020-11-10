@@ -17,7 +17,6 @@ const theme = createMuiTheme({
   },
   props: {
     MuiSvgIcon: {
-      htmlColor: '#e8f1f2',
     }
   },
 });
