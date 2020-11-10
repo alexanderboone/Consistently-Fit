@@ -101,7 +101,7 @@ export default function ExerciseCard(props) {
                                             </Grid>
                                         </Grid>
                                         <Grid item>
-                                            <Button onClick={handleClick} color="primary" size="medium"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
+                                            <Button onClick={handleClick} color="primary" size="large"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
                                         </Grid>
                                     </Grid>
                                     </div>
@@ -122,7 +122,7 @@ export default function ExerciseCard(props) {
                         </CardContent>
 
                         <CardActions className={classes.actionsBack}>
-                            <Button onClick={handleClick} color="primary" size="medium"><SvgInfoIcon fontSize="medium" color="primary"></SvgInfoIcon></Button>
+                            <Button onClick={handleClick} color="primary" size="large"><SvgInfoIcon fontSize="large" color="primary"></SvgInfoIcon></Button>
                         </CardActions>
 
                     </Card>
